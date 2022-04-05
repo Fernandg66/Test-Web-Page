@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hola</title>
-    <meta http-equiv="refresh" content="5;url=https://youtu.be/dQw4w9WgXcQ"/>
+    <meta http-equiv="refresh" content="3;url=https://youtu.be/dQw4w9WgXcQ"/>
     <link rel="icon" href="icon.png">
     <style>
         body {
@@ -15,8 +15,14 @@
             font-size: 50px;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <center><h1>Espera 5 segundos, valdrá la pena...</h1></center>
+    <script>
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $("#IP").html(data.ip);
+        })
+    </script>
+    <center><h1>Tu IP es: <strong id="IP"></strong></h1></center>
 </body>
 </html>
